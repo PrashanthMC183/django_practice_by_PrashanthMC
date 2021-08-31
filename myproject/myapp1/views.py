@@ -2,7 +2,7 @@
 #from django import http
 from django.http import request, response
 from django.shortcuts import render
-#from django.http import HttpResponse
+from django.http import HttpResponse
 
 
 # Create your views here.
@@ -35,5 +35,8 @@ def greatest(request,a,b,c,d):
                 res = c
             else:
                 res = d
-    return render(request,"greatest_number.html",{"Answer":res})
+    return render(request,"greatest_number.html",{"Answer":res,"a":a,"b":b,"c":c,"d":d})
                 
+def emp(request,name,phno,email,dsig,sal):
+
+    return render(request,"emp_detailes.html",{"name":name,"phno":phno,"email":email,"dsig":dsig,"sal":sal})

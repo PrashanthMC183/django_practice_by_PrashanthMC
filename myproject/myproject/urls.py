@@ -23,4 +23,5 @@ urlpatterns = [
     path('login/',views.login,name='login'),
     path('fruites/',views.fruites,name='fruites'),
     path('greatest/<int:a>/<int:b>/<int:c>/<int:d>',views.greatest,name='greatest'),
+
 ]
