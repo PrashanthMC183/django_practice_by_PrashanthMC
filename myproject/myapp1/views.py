@@ -1,7 +1,8 @@
 #from myproject.views import sample2
-from django import http
+#from django import http
+from django.http import request, response
 from django.shortcuts import render
-from django.http import HttpResponse
+#from django.http import HttpResponse
 
 
 # Create your views here.
@@ -14,3 +15,25 @@ def login(request):
 
 def fruites(request):
     return render(request,"login.html",{"fruites":["Apple","Banana","Orange","Mango"]})
+
+def greatest(request,a,b,c,d):
+    res = 0
+    if a > b:
+        if a > c:
+            if a > d:
+                res = a
+            else:
+               res = d
+    else:
+        if b > c:
+            if b > d:
+                res = b
+            else:
+                res = d
+        else:
+            if c > d:
+                res = c
+            else:
+                res = d
+    return render(request,"greatest_number.html",{"Answer":res})
+                
